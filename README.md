@@ -1,6 +1,6 @@
 # 🔐 Suricata IDS/IPS Setup & Monitoring
 
-## 📌 Overview
+##  Overview
 
 This project demonstrates how to install, configure, and use Suricata as a Network Intrusion Detection and Prevention System (IDS/IPS).
 
