@@ -1,0 +1,76 @@
+# Logrotate configuration for Suricata logs are
+
+# Rotate fast.log
+/var/log/suricata/fast.log {
+    size 1G             # Rotate when the log file reaches 1GB in size
+    rotate 5            # Keep up to 5 rotated log files
+    compress            # Compress the rotated log files using gzip
+    missingok           # Continue even if the log file is missing
+    notifempty          # Do not rotate an empty log file
+    create 0640 root root  # Create the new log file with specified permissions and ownership
+    postrotate
+        # Send a HUP signal to Suricata's PID to trigger log reopening
+        # Use /bin/kill to send the signal, redirecting errors to /dev/null
+        /bin/kill -HUP $(cat /var/run/suricata.pid 2>/dev/null) 2>/dev/null || true
+    endscript
+}
+
+# Rotate stats.log
+/var/log/suricata/stats.log {
+    size 1G             # Rotate when the log file reaches 1GB in size
+    rotate 5            # Keep up to 5 rotated log files
+    compress            # Compress the rotated log files using gzip
+    missingok           # Continue even if the log file is missing
+    notifempty          # Do not rotate an empty log file
+    create 0640 root root  # Create the new log file with specified permissions and ownership
+    postrotate
+        # Send a HUP signal to Suricata's PID to trigger log reopening
+        # Use /bin/kill to send the signal, redirecting errors to /dev/null
+        /bin/kill -HUP $(cat /var/run/suricata.pid 2>/dev/null) 2>/dev/null || true
+    endscript
+}
+
+# Rotate suricata.log
+/var/log/suricata/suricata.log {
+    size 1G             # Rotate when the log file reaches 1GB in size
+    rotate 5            # Keep up to 5 rotated log files
+    compress            # Compress the rotated log files using gzip
+    missingok           # Continue even if the log file is missing
+    notifempty          # Do not rotate an empty log file
+    create 0640 root root  # Create the new log file with specified permissions and ownership
+    postrotate
+        # Send a HUP signal to Suricata's PID to trigger log reopening
+        # Use /bin/kill to send the signal, redirecting errors to /dev/null
+        /bin/kill -HUP $(cat /var/run/suricata.pid 2>/dev/null) 2>/dev/null || true
+    endscript
+}
+
+# Rotate suricata-start.log
+/var/log/suricata/suricata-start.log {
+    size 1G             # Rotate when the log file reaches 1GB in size
+    rotate 5            # Keep up to 5 rotated log files
+    compress            # Compress the rotated log files using gzip
+    missingok           # Continue even if the log file is missing
+    notifempty          # Do not rotate an empty log file
+    create 0640 root root  # Create the new log file with specified permissions and ownership
+    postrotate
+        # Send a HUP signal to Suricata's PID to trigger log reopening
+        # Use /bin/kill to send the signal, redirecting errors to /dev/null
+        /bin/kill -HUP $(cat /var/run/suricata.pid 2>/dev/null) 2>/dev/null || true
+    endscript
+}
+
+# Rotate eve.json
+/var/log/suricata/eve.json {
+    size 1G             # Rotate when the log file reaches 1GB in size
+    rotate 5            # Keep up to 5 rotated log files
+    compress            # Compress the rotated log files using gzip
+    missingok           # Continue even if the log file is missing
+    notifempty          # Do not rotate an empty log file
+    create 0640 root root  # Create the new log file with specified permissions and ownership
+    postrotate
+        # Send a HUP signal to Suricata's PID to trigger log reopening
+        # Use /bin/kill to send the signal, redirecting errors to /dev/null
+        /bin/kill -HUP $(cat /var/run/suricata.pid 2>/dev/null) 2>/dev/null || true
+    endscript
+}
